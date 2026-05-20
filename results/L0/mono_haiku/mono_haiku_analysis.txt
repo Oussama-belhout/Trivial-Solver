@@ -1,0 +1,55 @@
+mono_haiku analysis (L0 monolith, haiku model)
+Source files: mono_zero_shot_haiku.json, mono_few_shot_haiku.json, mono_cot_haiku.json
+Benchmarks per run: n=10
+
+Executive takeaways
+- All three prompting variants solved every benchmark (100% success across easy/medium/hard).
+- Few-shot is best on efficiency: highest first-shot rate (80%), lowest mean iterations (0.3), lowest mean wall time.
+- Zero-shot and CoT required a refinement pass on every run (mean iterations 1.0).
+- Explanation faithfulness is uniformly 0.0 pass rate across all variants (regex metric).
+
+Core metrics by prompting variant
+- zero_shot
+  - success_rate: 100.0%
+  - first_shot_success_rate: 0.0%
+  - mean_iterations: 1.00
+  - mean_wall_time_seconds: 37.425 (stdev 16.603, min 25.29, max 71.22)
+  - mean_java_code_chars: 2758.2 (stdev 1031.8)
+  - compilation_failure_rate: 0.0%
+  - runs_with_error_history: 10 / 10 (max error_history length 1)
+  - faithfulness pass_rate: 0.0% (mean var overlap 0.0)
+
+- few_shot
+  - success_rate: 100.0%
+  - first_shot_success_rate: 80.0%
+  - mean_iterations: 0.30
+  - mean_wall_time_seconds: 27.937 (stdev 12.037, min 11.36, max 52.11)
+  - mean_java_code_chars: 2285.7 (stdev 892.8)
+  - compilation_failure_rate: 0.0%
+  - runs_with_error_history: 2 / 10 (max error_history length 2)
+  - faithfulness pass_rate: 0.0% (mean var overlap 0.0)
+
+- cot
+  - success_rate: 100.0%
+  - first_shot_success_rate: 0.0%
+  - mean_iterations: 1.00
+  - mean_wall_time_seconds: 37.301 (stdev 8.498, min 28.12, max 52.45)
+  - mean_java_code_chars: 2618.4 (stdev 683.8)
+  - compilation_failure_rate: 0.0%
+  - runs_with_error_history: 10 / 10 (max error_history length 1)
+  - faithfulness pass_rate: 0.0% (mean var overlap 0.0)
+
+Ranked comparisons
+- mean wall time (lower is better): few_shot (27.937) < cot (37.301) < zero_shot (37.425)
+- mean iterations (lower is better): few_shot (0.30) < zero_shot (1.00) = cot (1.00)
+- first-shot success (higher is better): few_shot (80%) > zero_shot (0%) = cot (0%)
+- mean java size (lower is better): few_shot (2285.7) < cot (2618.4) < zero_shot (2758.2)
+
+Difficulty and category coverage
+- All variants: 100% success for easy (3/3), medium (3/3), hard (4/4).
+- All categories show 100% success: queens (2), sudoku (1), magic_square (2), graph_coloring (1), cryptarithmetic (1), scheduling (1), latin_square (1), knapsack (1).
+
+Notes and anomalies to track
+- Error histories exist even when compilation_failed is false; refinement appears to recover early compilation issues (especially zero_shot and cot).
+- Explanation faithfulness is consistently 0.0, suggesting the L0 explanation prompt is not grounded in variable names or solver stats for this model/prompting.
+- Several explanations reference mismatched problems (e.g., 4-Queens text in other tasks), indicating explanation quality issues despite solver success.

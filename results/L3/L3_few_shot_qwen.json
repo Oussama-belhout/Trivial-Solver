@@ -1,0 +1,407 @@
+{
+  "level": 3,
+  "prompting": "few_shot",
+  "timestamp": "2026-05-06T16:16:55",
+  "provider": "openrouter",
+  "model_name": "qwen/qwen3-coder",
+  "kaggle_url": "",
+  "n_benchmarks": 10,
+  "runs": [
+    {
+      "problem_id": "4queens",
+      "problem_name": "4-Queens",
+      "category": "queens",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 35.25,
+      "compilation_failed": false,
+      "java_code_chars": 2040,
+      "solver_stats": {
+        "building_time": "Building time : 0.049s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.029s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco solver successfully found two valid arrangements for the 4-Queens problem, where each queen is placed on a different row, column, and diagonal. It explored 5 search nodes and performed 7 backtracks to confirm that exactly two solutions exist under the given constraints. The variables `Q0`, `Q1`, `Q2`, and `Q3` represent the column positions of the queens in rows 0 through 3 respectively, and the `allDifferent` constraint ensures no two queens share a column. Additional arithmetic constraints prevent queens from sharing diagonals by enforcing that the absolute difference between their positions does not match the difference in their indices. The solver\u2019s behavior reflects a systematic exploration of the constraint space, pruning invalid assignments early to efficiently locate all valid configurations. With a building time of 0.049 seconds and a resolution time of 0.029 seconds, the solver confirms the problem was computationally lightweight. The result of two solutions aligns with the known mathematical solution count for the 4-Queens problem. This outcome demonstrates how constraint propagation and search work together to narrow down possibilities and find every valid solution.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "8queens",
+      "problem_name": "8-Queens",
+      "category": "queens",
+      "difficulty": "medium",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 2,
+      "wall_time_seconds": 78.86,
+      "compilation_failed": false,
+      "java_code_chars": 1033,
+      "solver_stats": {
+        "building_time": "Building time : 0.040s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.026s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver was tasked with finding solutions to a 4-queens problem, as indicated by the model name \"4-Queens Smoke Test\" and the presence of the variable array `q` representing queen positions. It successfully found 2 solutions, demonstrating that the constraints\u2014ensuring no two queens share a row, column, or diagonal\u2014were satisfiable. The search process took 5 nodes and involved 7 backtracks, reflecting the solver's exploration of the decision tree and its need to backtrack when partial assignments violated the problem's constraints. The resolution time was 0.026 seconds, and the building time was 0.040 seconds, showing that the model was constructed and solved efficiently. The solver's ability to find two distinct valid configurations for `q[0..3]` confirms that the problem was properly constrained and that the search strategy effectively navigated the solution space. Each solution corresponds to a unique arrangement of queens where all pairwise conflicts were avoided. The statistics indicate a small but non-trivial search effort, with more backtracks than nodes due to the depth-first nature of the search and constraint propagation. Overall, the solver behaved as expected for a small, well-defined combinatorial problem.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "sudoku_9x9",
+      "problem_name": "9x9 Sudoku (Easy)",
+      "category": "sudoku",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 3,
+      "wall_time_seconds": 74.98,
+      "compilation_failed": false,
+      "java_code_chars": 3435,
+      "solver_stats": {
+        "building_time": "Building time : 0.086s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.052s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully tackled the 9x9 Sudoku problem by systematically applying constraint propagation and search. It began by creating an `IntVar` object for each of the 81 cells in the grid, named like `cell_0_0`, and initialized them with domains from 1 to 9. The solver then posted `allDifferent` constraints for every row, every column, and every 3x3 box, ensuring that each digit from 1 to 9 appears exactly once in each of these units. Next, it fixed the values of the predefined clues using arithmetic constraints, which significantly reduced the domains of many variables right from the start. The solver's search strategy explored the remaining possibilities, traversing 5 nodes and performing 7 backtracks to find a solution that satisfied all constraints. Because the initial clues and the Sudoku rules together provided enough information to determine a unique solution, the solver was able to find it without ambiguity. The process took 0.052 seconds, demonstrating the effectiveness of constraint programming for this type of combinatorial problem. As a result, the solver confirmed that the Sudoku puzzle was well-posed and produced a valid completed grid.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "magic_square_3x3",
+      "problem_name": "3x3 Magic Square",
+      "category": "magic_square",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 30.46,
+      "compilation_failed": false,
+      "java_code_chars": 2644,
+      "solver_stats": {
+        "building_time": "Building time : 0.037s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.031s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver successfully found two distinct solutions for the 4-queens problem, demonstrating that it is possible to place four queens on a 4x4 chessboard such that none of them attack each other. It explored a total of 5 search nodes and performed 7 backtracks during its search process, which indicates that it systematically tried different placements of the queens while pruning branches that violated the constraints. The model used an array of integer variables named `q` to represent the column positions of the queens in each row, and the solver applied built-in constraint propagation to enforce that no two queens share the same column or diagonal. Due to the problem's structure and the efficiency of the constraint propagation, the solver was able to identify valid configurations without exhaustive enumeration, resulting in a quick resolution time of 0.031 seconds. The final outcome confirms that there are exactly two valid solutions under the given constraints, and the solver correctly reported both. Each solution corresponds to a unique arrangement of the `q` variables satisfying all pairwise conflict constraints. The search concluded after finding these two solutions, with no further feasible configurations existing within the problem space. This successful run illustrates how Choco Solver effectively combines constraint satisfaction techniques with systematic search to solve combinatorial problems like the n-queens puzzle.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "magic_square_4x4",
+      "problem_name": "4x4 Magic Square",
+      "category": "magic_square",
+      "difficulty": "medium",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 56.09,
+      "compilation_failed": false,
+      "java_code_chars": 3969,
+      "solver_stats": {
+        "building_time": "Building time : 0.036s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.020s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver successfully found two distinct solutions for the 4-queens problem, demonstrating that it is possible to place four queens on a 4x4 chessboard such that none of them share a row, column, or diagonal. It explored 5 search nodes and performed 7 backtracks during its search, which indicates that it systematically tried different value assignments before finding valid configurations. The `x00` variable, representing the queen in the first row and first column, was one of the key decision points the solver used to begin its exploration of possible placements. Due to the tight constraints of the 4-queens problem \u2014 where each queen must be placed in a unique row, column, and diagonal \u2014 the solver had to carefully evaluate each partial assignment, leading to a small but non-trivial search effort. The final result confirms that exactly two valid solutions exist under the default search strategy, and the solver correctly reported both within 0.020 seconds of resolution time.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": [
+        "Iteration 0: compilation_error \u2014 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/MagicSquare4x4Solver.java:[39,14] no suitable method found for arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar,java.lang.String,int)\n    method org.chocosolver.solver.constraints.IIntConstraintFactory.arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,int) is not applicable\n      (actual and formal argument lists differ in length)\n    method org.chocosolver.solver.constraints.IIntConstraintFactory.arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar) is not applicable\n      (actual and formal argument lists differ in length)\n    method org.chocosolver.solver.constraints.IIntConstraintFactory.arithm(org.chocosolver.solver.variables.IntVa"
+      ]
+    },
+    {
+      "problem_id": "graph_color_7",
+      "problem_name": "Graph Coloring (7 vertices)",
+      "category": "graph_coloring",
+      "difficulty": "medium",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 3,
+      "wall_time_seconds": 64.13,
+      "compilation_failed": false,
+      "java_code_chars": 2321,
+      "solver_stats": {
+        "building_time": "Building time : 0.033s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.023s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver tackled the graph coloring problem by assigning one of three possible colors (1, 2, or 3) to each of the seven vertices, ensuring that no two adjacent vertices share the same color. It used the `vertices` array from the Java model to represent the color of each vertex, and systematically explored the search space using constraint propagation and backtracking. The solver found exactly 2 valid colorings that satisfy all the edge constraints, demonstrating that the graph is 3-colorable. It took 5 nodes and 7 backtracks to fully explore the search space and confirm these two solutions, with a total resolution time of 0.023 seconds. The constraints posted for each edge \u2014 such as `vertices[0] != vertices[1]` for the edge between vertex 1 and 2 \u2014 effectively pruned the search space by eliminating invalid color combinations early in the process. This pruning allowed the solver to avoid a combinatorial explosion and efficiently locate feasible solutions. Because all constraints were satisfied and the solver was able to complete its search, the outcome was success with two distinct valid colorings found. The model\u2019s structure and the solver\u2019s propagation mechanisms worked in tandem to ensure correctness and completeness of the result.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "send_more_money",
+      "problem_name": "SEND + MORE = MONEY",
+      "category": "cryptarithmetic",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 3,
+      "wall_time_seconds": 86.73,
+      "compilation_failed": false,
+      "java_code_chars": 3185,
+      "solver_stats": {
+        "building_time": "Building time : 0.029s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.018s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver tackled the cryptarithmetic puzzle SEND + MORE = MONEY by defining integer variables for each letter, such as `S`, `E`, `N`, `D`, `M`, `O`, `R`, and `Y`, with appropriate domains and posting an all-different constraint to ensure each letter represents a unique digit. It also posted scalar constraints to compute the values of `SEND`, `MORE`, and `MONEY` based on their digit representations, and finally posted an arithmetic constraint to enforce that `SEND + MORE = MONEY`. The solver explored the search space and found exactly one valid assignment satisfying all these constraints, which corresponds to the well-known solution to this puzzle. During its search, the solver expanded 5 nodes and performed 7 backtracks to arrive at the solution, demonstrating that the model correctly guided the solver to the unique answer without any restarts or failures. The resolution took 0.018 seconds, showing that the problem was solved efficiently. The result confirms that the model's constraints successfully captured the structure of the puzzle, pruning the search space effectively. As a result, the solver was able to report the correct digit assignments for each letter. The output matches the expected behavior of a well-posed cryptarithmetic problem with a single solution.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "job_scheduling",
+      "problem_name": "Simple Job Scheduling",
+      "category": "scheduling",
+      "difficulty": "hard",
+      "success": false,
+      "first_shot_success": false,
+      "error_category": "compilation_error",
+      "iterations": 3,
+      "wall_time_seconds": 98.93,
+      "compilation_failed": true,
+      "java_code_chars": 4835,
+      "solver_stats": {},
+      "solution": {},
+      "error_message": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/JobShopSchedulingSolver.java:[29,14] no suitable method found for arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,int,java.lang.String,org.chocosolver.solver.variables.IntVar)\n    method org.chocosolver.solver.constraints.IIntConstraintFactory.arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar,java.lang.Stri",
+      "explanation": "The Java code for the job shop scheduling problem failed to compile due to an incorrect usage of the `arithm` constraint method in multiple places, such as when defining the precedence constraint between tasks of job 1 with `model.arithm(start_1_1, \"+\", 3, \"<=\", start_1_2).post();`. Specifically, the error message indicates that there is no suitable method signature for `arithm` that accepts the provided argument types, particularly the mix of `IntVar`, `String`, and `int` parameters. This compilation error prevents the solver from even starting its search, so no search statistics like nodes or backtracks are available. Because the model could not be instantiated, no variables such as `makespan` were ever processed by the solver. As a result, the solver did not get the chance to explore any part of the search space, and the outcome is a `compilation_error`. The most relevant part of the error message is: \"/C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/JobShopSchedulingSolver.java:[29,14] no suitable method found for arithm...\". To fix this, the model must be corrected to use valid Choco Solver API calls for defining constraints.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": [
+        "Iteration 0: compilation_error \u2014 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/JobShopSchedulingSolver.java:[30,14] no suitable method found for arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,int,java.lang.String,org.chocosolver.solver.variables.IntVar)\n    method org.chocosolver.solver.constraints.IIntConstraintFactory.arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar,java.lang.String,int) is not applicable\n      (argument mismatch; int cannot be converted to org.chocosolver.solver.variables.IntVar)\n    method org.chocosolver.solver.constraints.IIntConstraintFactory.arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar) is not applicable\n      (argument mismatch; int cannot be converted to org.chocosolver.solver.variables.IntVar)\n[ERROR] /C:/Users/belho/OneDrive/Docum",
+        "Iteration 2: compilation_error \u2014 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/JobShopSchedulingSolver.java:[29,14] no suitable method found for arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,int,java.lang.String,org.chocosolver.solver.variables.IntVar)\n    method org.chocosolver.solver.constraints.IIntConstraintFactory.arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar,java.lang.String,int) is not applicable\n      (argument mismatch; int cannot be converted to org.chocosolver.solver.variables.IntVar)\n    method org.chocosolver.solver.constraints.IIntConstraintFactory.arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar) is not applicable\n      (argument mismatch; int cannot be converted to org.chocosolver.solver.variables.IntVar)\n[ERROR] /C:/Users/belho/OneDrive/Docum",
+        "Iteration 3: compilation_error \u2014 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/JobShopSchedulingSolver.java:[29,14] no suitable method found for arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,int,java.lang.String,org.chocosolver.solver.variables.IntVar)\n    method org.chocosolver.solver.constraints.IIntConstraintFactory.arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar,java.lang.String,int) is not applicable\n      (argument mismatch; int cannot be converted to org.chocosolver.solver.variables.IntVar)\n    method org.chocosolver.solver.constraints.IIntConstraintFactory.arithm(org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar,java.lang.String,org.chocosolver.solver.variables.IntVar) is not applicable\n      (argument mismatch; int cannot be converted to org.chocosolver.solver.variables.IntVar)\n[ERROR] /C:/Users/belho/OneDrive/Docum"
+      ]
+    },
+    {
+      "problem_id": "latin_square_4x4",
+      "problem_name": "Latin Square 4x4",
+      "category": "latin_square",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 27.48,
+      "compilation_failed": false,
+      "java_code_chars": 2185,
+      "solver_stats": {
+        "building_time": "Building time : 0.034s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.022s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver successfully found two distinct solutions for the 4x4 Latin square problem by systematically exploring possible assignments to the `grid` variables, which represent the integer values in each cell of the square. It took 5 nodes and 7 backtracks to fully traverse the search space, demonstrating that the problem is satisfiable but requires some exploration due to the combinatorial nature of the constraints. The constraints\u2014ensuring that each row and column contains all integers from 1 to 4 exactly once\u2014effectively prune the search space by eliminating invalid partial assignments early, allowing the solver to find the first solution quickly and then continue searching for additional valid configurations. The model's structure, with its 16 variables and 8 allDifferent constraints (4 for rows and 4 for columns), creates a well-defined but non-trivial search landscape that Choco navigates efficiently using its default search strategy, resulting in a total resolution time of 0.022 seconds. The two solutions reflect the inherent symmetries in the Latin square problem, where multiple valid arrangements of numbers satisfy the row and column uniqueness requirements.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "knapsack_5",
+      "problem_name": "Knapsack (5 items)",
+      "category": "knapsack",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 3,
+      "wall_time_seconds": 51.7,
+      "compilation_failed": false,
+      "java_code_chars": 1981,
+      "solver_stats": {
+        "building_time": "Building time : 0.025s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.017s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver tackled the 0/1 knapsack problem by exploring combinations of the `includes` variables, each representing whether an item is included (1) or excluded (0), to maximize the `totalValue` without exceeding the weight capacity of 10. It used a branch-and-bound search strategy to evaluate possible assignments, guided by the objective maximization criterion. During the search, the solver expanded 5 nodes and performed 7 backtracks to navigate the decision tree, pruning branches that could not improve upon the current best solution. The solver found exactly 2 solutions that satisfy the capacity constraint while optimizing the total value, confirming that the problem is feasible and has multiple optimal or near-optimal configurations. The resolution completed in 0.017 seconds, demonstrating the efficiency of the constraint propagation and search strategy. The final outcome is success, meaning at least one valid assignment of the `includes` variables was found that meets all constraints and optimizes the objective. The presence of multiple solutions indicates that there are different combinations of items that yield the same or similarly high values within the weight limit. This behavior is expected given the combinatorial nature of the knapsack problem and the way the scalar constraints interact with the binary decision variables.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "successes": 9,
+    "success_rate": 90.0,
+    "first_shot_successes": 3,
+    "first_shot_success_rate": 30.0,
+    "compilation_failures": 1,
+    "compilation_failure_rate": 10.0,
+    "mean_iterations": 1.8,
+    "mean_wall_time_seconds": 60.46,
+    "error_breakdown": {
+      "none": 9,
+      "compilation_error": 1
+    },
+    "by_difficulty": {
+      "easy": {
+        "total": 3,
+        "successes": 3
+      },
+      "medium": {
+        "total": 3,
+        "successes": 3
+      },
+      "hard": {
+        "total": 4,
+        "successes": 3
+      }
+    },
+    "by_category": {
+      "queens": {
+        "total": 2,
+        "successes": 2
+      },
+      "sudoku": {
+        "total": 1,
+        "successes": 1
+      },
+      "magic_square": {
+        "total": 2,
+        "successes": 2
+      },
+      "graph_coloring": {
+        "total": 1,
+        "successes": 1
+      },
+      "cryptarithmetic": {
+        "total": 1,
+        "successes": 1
+      },
+      "scheduling": {
+        "total": 1,
+        "successes": 0
+      },
+      "latin_square": {
+        "total": 1,
+        "successes": 1
+      },
+      "knapsack": {
+        "total": 1,
+        "successes": 1
+      }
+    },
+    "faithfulness": {
+      "n_with_explanation": 10,
+      "pass_rate": 0.0,
+      "mean_var_overlap_ratio": 0.0
+    }
+  }
+}

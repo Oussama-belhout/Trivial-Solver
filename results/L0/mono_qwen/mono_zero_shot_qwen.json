@@ -1,0 +1,388 @@
+{
+  "level": 0,
+  "prompting": "zero_shot",
+  "timestamp": "2026-05-05T10:30:37",
+  "provider": "openrouter",
+  "model_name": "qwen/qwen-2.5-coder-32b-instruct",
+  "kaggle_url": "",
+  "n_benchmarks": 10,
+  "runs": [
+    {
+      "problem_id": "4queens",
+      "problem_name": "4-Queens",
+      "category": "queens",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 91.59,
+      "compilation_failed": false,
+      "java_code_chars": 458,
+      "solver_stats": {
+        "building_time": "Building time : 0.060s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully found",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "8queens",
+      "problem_name": "8-Queens",
+      "category": "queens",
+      "difficulty": "medium",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 140.88,
+      "compilation_failed": false,
+      "java_code_chars": 277,
+      "solver_stats": {
+        "building_time": "Building time : 0.044s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully found",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "sudoku_9x9",
+      "problem_name": "9x9 Sudoku (Easy)",
+      "category": "sudoku",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 40.12,
+      "compilation_failed": false,
+      "java_code_chars": 237,
+      "solver_stats": {
+        "building_time": "Building time : 0.062s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver was intended to solve a",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "magic_square_3x3",
+      "problem_name": "3x3 Magic Square",
+      "category": "magic_square",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 53.99,
+      "compilation_failed": false,
+      "java_code_chars": 237,
+      "solver_stats": {
+        "building_time": "Building time : 0.050s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver attempted to create a",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "magic_square_4x4",
+      "problem_name": "4x4 Magic Square",
+      "category": "magic_square",
+      "difficulty": "medium",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 99.34,
+      "compilation_failed": false,
+      "java_code_chars": 677,
+      "solver_stats": {
+        "building_time": "Building time : 0.031s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver was tasked with creating a",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "graph_color_7",
+      "problem_name": "Graph Coloring (7 vertices)",
+      "category": "graph_coloring",
+      "difficulty": "medium",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 42.87,
+      "compilation_failed": false,
+      "java_code_chars": 272,
+      "solver_stats": {
+        "building_time": "Building time : 0.046s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully found",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "send_more_money",
+      "problem_name": "SEND + MORE = MONEY",
+      "category": "cryptarithmetic",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 79.57,
+      "compilation_failed": false,
+      "java_code_chars": 453,
+      "solver_stats": {
+        "building_time": "Building time : 0.041s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver was tasked with solving the cryptarithmetic puzzle SEND + MORE = MONEY, where each letter represents a unique digit and S and M cannot be zero. However, the provided solver stdout and statistics indicate that the model was incorrectly set up to solve a",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "job_scheduling",
+      "problem_name": "Simple Job Scheduling",
+      "category": "scheduling",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 129.52,
+      "compilation_failed": false,
+      "java_code_chars": 298,
+      "solver_stats": {
+        "building_time": "Building time : 0.060s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully found",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "latin_square_4x4",
+      "problem_name": "Latin Square 4x4",
+      "category": "latin_square",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 45.58,
+      "compilation_failed": false,
+      "java_code_chars": 234,
+      "solver_stats": {
+        "building_time": "Building time : 0.063s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully found",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "knapsack_5",
+      "problem_name": "Knapsack (5 items)",
+      "category": "knapsack",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 50.46,
+      "compilation_failed": false,
+      "java_code_chars": 286,
+      "solver_stats": {
+        "building_time": "Building time : 0.038s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver was tasked with solving a /",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "successes": 10,
+    "success_rate": 100.0,
+    "first_shot_successes": 0,
+    "first_shot_success_rate": 0.0,
+    "compilation_failures": 0,
+    "compilation_failure_rate": 0.0,
+    "mean_iterations": 1.0,
+    "mean_wall_time_seconds": 77.39,
+    "error_breakdown": {
+      "none": 10
+    },
+    "by_difficulty": {
+      "easy": {
+        "total": 3,
+        "successes": 3
+      },
+      "medium": {
+        "total": 3,
+        "successes": 3
+      },
+      "hard": {
+        "total": 4,
+        "successes": 4
+      }
+    },
+    "by_category": {
+      "queens": {
+        "total": 2,
+        "successes": 2
+      },
+      "sudoku": {
+        "total": 1,
+        "successes": 1
+      },
+      "magic_square": {
+        "total": 2,
+        "successes": 2
+      },
+      "graph_coloring": {
+        "total": 1,
+        "successes": 1
+      },
+      "cryptarithmetic": {
+        "total": 1,
+        "successes": 1
+      },
+      "scheduling": {
+        "total": 1,
+        "successes": 1
+      },
+      "latin_square": {
+        "total": 1,
+        "successes": 1
+      },
+      "knapsack": {
+        "total": 1,
+        "successes": 1
+      }
+    },
+    "faithfulness": {
+      "n_with_explanation": 10,
+      "pass_rate": 0.0,
+      "mean_var_overlap_ratio": 0.0
+    }
+  }
+}

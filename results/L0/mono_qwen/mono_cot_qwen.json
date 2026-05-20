@@ -1,0 +1,368 @@
+{
+  "level": 0,
+  "prompting": "cot",
+  "timestamp": "2026-05-05T10:46:08",
+  "provider": "openrouter",
+  "model_name": "qwen/qwen-2.5-coder-32b-instruct",
+  "kaggle_url": "",
+  "n_benchmarks": 10,
+  "runs": [
+    {
+      "problem_id": "4queens",
+      "problem_name": "4-Queens",
+      "category": "queens",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 2,
+      "wall_time_seconds": 32.56,
+      "compilation_failed": false,
+      "java_code_chars": 245,
+      "solver_stats": {
+        "building_time": "Building time : 0.053s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver successfully found",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "8queens",
+      "problem_name": "8-Queens",
+      "category": "queens",
+      "difficulty": "medium",
+      "success": false,
+      "first_shot_success": false,
+      "error_category": "compilation_error",
+      "iterations": 3,
+      "wall_time_seconds": 18.38,
+      "compilation_failed": true,
+      "java_code_chars": 24,
+      "solver_stats": {},
+      "solution": {},
+      "error_message": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Place8QueensOnSolver.java:[3,1] class, interface, enum, or record expected\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project choco-runner: Compilation failure\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Place8QueensOnSolver.java:[3,1] c",
+      "explanation": "The solver did not find a solution because the Java code failed to compile, resulting in a compilation error. The error message indicates that the Java compiler expected a class, interface, enum, or record definition at the beginning of the file, but found something else, likely due to a syntax error or missing keyword. No solver statistics were generated because the compilation failed before the solver could execute. The model intended to place",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "sudoku_9x9",
+      "problem_name": "9x9 Sudoku (Easy)",
+      "category": "sudoku",
+      "difficulty": "hard",
+      "success": false,
+      "first_shot_success": false,
+      "error_category": "compilation_error",
+      "iterations": 3,
+      "wall_time_seconds": 17.25,
+      "compilation_failed": true,
+      "java_code_chars": 24,
+      "solver_stats": {},
+      "solution": {},
+      "error_message": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/SolveA9x9SudokuSolver.java:[3,1] class, interface, enum, or record expected\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project choco-runner: Compilation failure\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/SolveA9x9SudokuSolver.java:[3,1]",
+      "explanation": "The solver did not find a solution because the Java code failed to compile, resulting in a compilation error. The error message indicates that the Java compiler expected a class, interface, enum, or record definition at the beginning of the file but did not find one, pointing to a syntax issue on line",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "magic_square_3x3",
+      "problem_name": "3x3 Magic Square",
+      "category": "magic_square",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 2,
+      "wall_time_seconds": 13.42,
+      "compilation_failed": false,
+      "java_code_chars": 246,
+      "solver_stats": {
+        "building_time": "Building time : 0.044s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver was intended to create a",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "magic_square_4x4",
+      "problem_name": "4x4 Magic Square",
+      "category": "magic_square",
+      "difficulty": "medium",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 2,
+      "wall_time_seconds": 12.61,
+      "compilation_failed": false,
+      "java_code_chars": 246,
+      "solver_stats": {
+        "building_time": "Building time : 0.042s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver found",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "graph_color_7",
+      "problem_name": "Graph Coloring (7 vertices)",
+      "category": "graph_coloring",
+      "difficulty": "medium",
+      "success": false,
+      "first_shot_success": false,
+      "error_category": "compilation_error",
+      "iterations": 3,
+      "wall_time_seconds": 14.79,
+      "compilation_failed": true,
+      "java_code_chars": 24,
+      "solver_stats": {},
+      "solution": {},
+      "error_message": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Color7VerticesOfSolver.java:[3,1] class, interface, enum, or record expected\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project choco-runner: Compilation failure\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Color7VerticesOfSolver.java:[3,",
+      "explanation": "The solver did not find a solution because the Java model failed to compile, resulting in a compilation error. The error message indicates that the Java file `Color",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "send_more_money",
+      "problem_name": "SEND + MORE = MONEY",
+      "category": "cryptarithmetic",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 2,
+      "wall_time_seconds": 19.64,
+      "compilation_failed": false,
+      "java_code_chars": 427,
+      "solver_stats": {
+        "building_time": "Building time : 0.044s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver found two solutions to the cryptarithmetic puzzle SEND + MORE = MONEY, represented by the variable assignments [q[] =",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "job_scheduling",
+      "problem_name": "Simple Job Scheduling",
+      "category": "scheduling",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 9.45,
+      "compilation_failed": false,
+      "java_code_chars": 246,
+      "solver_stats": {
+        "building_time": "Building time : 0.049s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver successfully found",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "latin_square_4x4",
+      "problem_name": "Latin Square 4x4",
+      "category": "latin_square",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 2,
+      "wall_time_seconds": 16.82,
+      "compilation_failed": false,
+      "java_code_chars": 243,
+      "solver_stats": {
+        "building_time": "Building time : 0.051s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver successfully found",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    },
+    {
+      "problem_id": "knapsack_5",
+      "problem_name": "Knapsack (5 items)",
+      "category": "knapsack",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 13.91,
+      "compilation_failed": false,
+      "java_code_chars": 239,
+      "solver_stats": {
+        "building_time": "Building time : 0.045s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver found two solutions to the /",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      }
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "successes": 7,
+    "success_rate": 70.0,
+    "first_shot_successes": 0,
+    "first_shot_success_rate": 0.0,
+    "compilation_failures": 3,
+    "compilation_failure_rate": 30.0,
+    "mean_iterations": 2.1,
+    "mean_wall_time_seconds": 16.88,
+    "error_breakdown": {
+      "none": 7,
+      "compilation_error": 3
+    },
+    "by_difficulty": {
+      "easy": {
+        "total": 3,
+        "successes": 3
+      },
+      "medium": {
+        "total": 3,
+        "successes": 1
+      },
+      "hard": {
+        "total": 4,
+        "successes": 3
+      }
+    },
+    "by_category": {
+      "queens": {
+        "total": 2,
+        "successes": 1
+      },
+      "sudoku": {
+        "total": 1,
+        "successes": 0
+      },
+      "magic_square": {
+        "total": 2,
+        "successes": 2
+      },
+      "graph_coloring": {
+        "total": 1,
+        "successes": 0
+      },
+      "cryptarithmetic": {
+        "total": 1,
+        "successes": 1
+      },
+      "scheduling": {
+        "total": 1,
+        "successes": 1
+      },
+      "latin_square": {
+        "total": 1,
+        "successes": 1
+      },
+      "knapsack": {
+        "total": 1,
+        "successes": 1
+      }
+    },
+    "faithfulness": {
+      "n_with_explanation": 10,
+      "pass_rate": 0.0,
+      "mean_var_overlap_ratio": 0.0
+    }
+  }
+}

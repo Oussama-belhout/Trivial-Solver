@@ -1,0 +1,138 @@
+notes -- data analysis. quick
+
+==================
+the curve
+==================
+
+mean success across 3 models:
+  L0 = 100%
+  L1 = 93.3
+  L2 = 80
+  L3 = 66.7
+
+so... it goes DOWN every time i add an agent. opposite of what
+i predicted in the plan. not noise -- it's monotone.
+
+also: compile fails 0 -> 27%, iterations 3x, walltime explodes.
+pipeline does more work for worse outcome. weird.
+
+
+==================
+per model
+==================
+
+  qwen      100  100  90  90    stable
+  haiku     100  100  50  60    !!! falls off cliff at L2
+  deepseek  100  80   100 50    zigzag, no idea
+
+haiku was BEST at L0/L1 and WORST at L3. so monolith score
+doesnt predict pipeline score. interesting.
+
+
+==================
+where it breaks
+==================
+
+easy + medium = ~100% everywhere even at L3
+all the action is in the hard tier (4 problems):
+  L0 12/12  ->  L1 10/12  ->  L2 9/12  ->  L3 5/12
+
+the failing ones: sudoku, send+more=money, scheduling, knapsack.
+
+
+==================
+WHY -- 5 reasons
+==================
+
+1) errors compound. 4 stages each at 95% reliable => cap at 81%. refiner cant fix silent drift it never sees.
+
+2) verifier redundancy <-- the big one : choco is already a perfect verifier. either java compiles+solves or it doesnt. adding an LLM critic on top of a perfect verifier doesnt add signal -> only adds NOISE.
+   thats why multi-agent works on essays/design (no verifier exists) and FAILS HERE (verifier exists).
+
+3) validator cries wolf : prompt literally says "find whats wrong" -> always finds smth. refiner trusts it -> rewrites correct code -> breaks it proof: haiku compile fails go 0 -> 0 -> 50 -> 30%
+    those bugs were INTRODUCED by the loop, not by haiku.
+
+4) retry budget broken.
+   "max 3 retries" was set at L0 (1 retry = 1 LLM call, cheap).
+   at L3, 1 retry = 4 LLM calls. same number, ~4x cost.
+   too few for hard problems, too many for stuck ones.
+   deepseek burned 5h 55min on ONE send+more=money run before
+   giving up. one outlier -> 16x walltime inflation at L3.
+
+5) models react differently.
+   no consistent ranking across the 4 levels. "good at task" and
+   "good in a pipeline" are different skills. cant tell from monolith
+   benchmarks alone.
+
+
+==================
+the takeaway
+==================
+
+literature (autogen, metagpt, chatdev...) says multi-agent > monolith.
+they tested it on tasks WITHOUT a verifier. we tested it on a task
+WITH one (choco). result inverts.
+
+real finding:
+  multi-agent helps when it SUBSTITUTES for a missing verifier
+  multi-agent hurts when it COMPETES with one
+
+calling it the "verifier-redundancy tax". size: ~7-13pp per added
+agent on this benchmark.
+
+
+==================
+limitations -- be honest
+==================
+
+- only 4 hard problems x 3 models = 12 cells per level. small.
+  trend is solid, per-cell deltas are inside 1 SE.
+- choco stats parser looks broken (constant nodes/backtracks
+  across totally different problems -> impossible). flagged.
+- faithfulness regex returns 0 everywhere bc solution dict empty.
+  metric is structurally undefined, not just zero.
+- token counts not stored => H-L3 token claim untestable.
+- only sequential decomposition tested. didnt try debate/voting/etc.
+
+
+==================
+what id change
+==================
+
+- reverse ladder: formalizer first, then validator, then refiner.
+  current order amplifies errors instead of constraining them.
+- let validator ABSTAIN ("no defect") instead of forcing critique.
+  breaks the M3 loop.
+- retry budget should scale w/ level cost, not be fixed at 3.
+- fix the parser before any further Q1/Q2 claim.
+- expand hard tier to n>=12 for stat power.
+
+
+==================
+the big point
+==================
+
+a refuted pre-registered hypothesis = successful experiment.
+the plan even said "plateau is a finding, not a failure".
+degradation is stronger than a plateau.
+
+so the contribution is NOT a system. its a measurement:
+- first matched-monolithic-baseline ablation on a verifier-grounded task
+- names the verifier-redundancy tax
+- explains the failure w/ 5 mechanisms backed by data
+
+
+==================
+charts (in order)
+==================
+
+01 success rate vs level     -- THE headline
+02 compile fails rising
+03 iterations climbing
+04 first-shot collapse
+05 hard-tier 12 -> 5
+06 walltime blowup at L3
+07 haiku compile fails (M3 evidence)
+08 L3 difficulty heatmap (haiku 0/4 on hard)
+09 L3 per-category heatmap
+10 L2 difficulty heatmap (where the regression starts)

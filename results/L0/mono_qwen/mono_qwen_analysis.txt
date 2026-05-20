@@ -1,0 +1,32 @@
+Qwen L0 bake-off — results                                                                                                                  
+                                                                                                                                              
+  ┌───────────┬──────────────┬────────────┬────────────┬───────────┬───────────┐                                                              
+  │  Variant  │   Success    │ First-shot │ Comp.fail  │ Mean iter │ Mean time │                                                              
+  ├───────────┼──────────────┼────────────┼────────────┼───────────┼───────────┤                                                              
+  │ zero_shot │ 10/10 (100%) │ 0/10 (0%)  │ 0/10 (0%)  │ 1.0       │ 77.4s     │                                                              
+  ├───────────┼──────────────┼────────────┼────────────┼───────────┼───────────┤                                                              
+  │ few_shot  │ 10/10 (100%) │ 0/10 (0%)  │ 0/10 (0%)  │ 1.0       │ 15.4s     │                                                              
+  ├───────────┼──────────────┼────────────┼────────────┼───────────┼───────────┤                                                              
+  │ cot       │ 7/10 (70%)   │ 0/10 (0%)  │ 3/10 (30%) │ 2.1       │ 16.9s     │                                                              
+  └───────────┴──────────────┴────────────┴────────────┴───────────┴───────────┘                                                              
+                                                                                                                                              
+  Qwen Coder 32B solved all 10 (incl. all 4 hard) on zero_shot and few_shot. Few-shot is the clear winner — same success, 5× faster.        
+                                                                                                                                              
+  ⚠ Three findings to address BEFORE paying for Haiku / R1                                                                                    
+                                                                                                                                              
+  1. first_shot_success = 0% across all 30 runs — almost certainly an off-by-one bug
+
+  30/30 problems showing exactly 1 refinement is too clean to be honest measurement. Iteration counter is likely being incremented by
+  monolith_model_node itself (so even a first-try success registers as iter=1). If this isn't fixed, the first-shot trajectory in the L0→L4
+  plot will be flat-zero everywhere — destroys one of your headline metrics.
+
+  2. CoT is broken — 30% compile errors, all [3,1] class, interface, enum, or record expected
+
+  That error means non-Java content leaked into the top of the .java file. Symptom: _strip_think_block() isn't catching every
+  <think>...</think> shape Qwen emits (probably unclosed tags or alternative delimiters). Don't run CoT on Haiku/R1 until fixed — would waste
+  money on a known-broken variant.
+
+  3. solution: {} empty + faithfulness 0% (pre-existing)
+
+  Bridge isn't returning variable assignments. Lower priority — Q1 (success rate) is unaffected; Q2 (faithfulness) is expected to be poor at
+  L0 anyway. Can fix before L4 runs.

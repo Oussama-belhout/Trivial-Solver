@@ -1,0 +1,416 @@
+{
+  "level": 0,
+  "prompting": "zero_shot",
+  "timestamp": "2026-05-05T12:26:16",
+  "provider": "openrouter",
+  "model_name": "deepseek/deepseek-r1-distill-llama-70b",
+  "kaggle_url": "",
+  "n_benchmarks": 10,
+  "runs": [
+    {
+      "problem_id": "4queens",
+      "problem_name": "4-Queens",
+      "category": "queens",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 84.47,
+      "compilation_failed": false,
+      "java_code_chars": 1470,
+      "solver_stats": {
+        "building_time": "Building time : 0.161s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully found 2 valid solutions for placing 4 queens on a 4x4 chessboard without any two queens threatening each other. The model used an array of `IntVar` variables named `queens` to represent the positions of the queens, where each variable corresponds to a row and its value indicates the column. The solver's behavior was guided by two main constraints: `allDifferent(queens)`, which ensured no two queens shared the same column, and a set of distance constraints that prevented queens from being placed on the same diagonal. These constraints significantly reduced the search space, allowing the solver to efficiently explore possible solutions. The solver's search effort is reflected in the statistics, which show that it explored 5 nodes and performed 7 backtracks before finding both solutions. The building time of 0.161 seconds indicates that the model was constructed quickly, and the lack of restarts suggests that the search strategy was effective. Overall, the combination of constraints and the solver's search strategy led to a successful outcome with minimal unnecessary exploration.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": [
+        "Iteration 0: compilation_error \u2014 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Place4QueensOnSolver.java:[5,46] package org.chocosolver.solver.search.solution does not exist\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Place4QueensOnSolver.java:[25,39] cannot find symbol\n  symbol:   class SolutionMonitor\n  location: class runner.Place4QueensOnSolver\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Place4QueensOnSolver.java:[26,13] method does not override or implement a method from a supertype\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project choco-runner: Compilation failure: Compilation failure: \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Place4QueensOnSolver.java:[5,46"
+      ]
+    },
+    {
+      "problem_id": "8queens",
+      "problem_name": "8-Queens",
+      "category": "queens",
+      "difficulty": "medium",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 64.79,
+      "compilation_failed": false,
+      "java_code_chars": 1387,
+      "solver_stats": {
+        "building_time": "Building time : 0.747s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully solved the 8 Queens problem by systematically exploring possible configurations of the `cols` array, which represents the column positions of the queens on each row. The solver had to enforce two main constraints: that all queens must be in different columns (via `model.allDifferent(cols)`) and that no two queens can be on the same diagonal (via `model.distance(cols[i], cols[j], \"!=\", j - i)`). These constraints significantly reduced the search space, allowing the solver to find solutions efficiently. The solver found 2 valid solutions after exploring 5 nodes and backtracking 7 times, demonstrating effective pruning of the search tree. The building time of 0.747 seconds indicates that the model was constructed efficiently before the search began. The combination of these constraints and the solver's search strategy led to a successful outcome with minimal unnecessary exploration.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": [
+        "Iteration 0: compilation_error \u2014 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Place8QueensOnSolver.java:[6,40] cannot find symbol\n  symbol:   class VF\n  location: package org.chocosolver.solver.variables\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Place8QueensOnSolver.java:[7,40] cannot find symbol\n  symbol:   class VariableFactory\n  location: package org.chocosolver.solver.variables\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Place8QueensOnSolver.java:[29,15] cannot find symbol\n  symbol:   method addSolutionListener(()->{ Syst[...]; } })\n  location: variable solver of type org.chocosolver.solver.Solver\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project choco-runner: Compilation failure: Compilation failure: \n[ERROR] /C:/Users/belho/On"
+      ]
+    },
+    {
+      "problem_id": "sudoku_9x9",
+      "problem_name": "9x9 Sudoku (Easy)",
+      "category": "sudoku",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 70.84,
+      "compilation_failed": false,
+      "java_code_chars": 2741,
+      "solver_stats": {
+        "building_time": "Building time : 0.027s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully solved the 9x9 Sudoku puzzle by systematically exploring possible values for each cell in the grid, represented by variables such as `grid[i][j]` in the Java model. The solver's efficient search was guided by the constraints ensuring that each row, column, and 3x3 subgrid contains all digits from 1 to 9 without repetition. These constraints significantly reduced the number of possibilities the solver had to consider, as evidenced by the relatively low number of 5 nodes explored and 7 backtracks performed. The solver found 2 valid solutions, demonstrating that the given clues allowed for multiple correct configurations. The entire process was completed quickly, with a building time of 0.027 seconds, indicating that the model was set up efficiently and the search strategy was effective in navigating the solution space.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": [
+        "Iteration 0: compilation_error \u2014 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/SolveA9x9SudokuSolver.java:[7,40] cannot find symbol\n  symbol:   class ResolutionOrder\n  location: package org.chocosolver.solver.variables\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project choco-runner: Compilation failure\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/SolveA9x9SudokuSolver.java:[7,40] cannot find symbol\n[ERROR]   symbol:   class ResolutionOrder\n[ERROR]   location: package org.chocosolver.solver.variables\n[ERROR] \n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERR"
+      ]
+    },
+    {
+      "problem_id": "magic_square_3x3",
+      "problem_name": "3x3 Magic Square",
+      "category": "magic_square",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 59.09,
+      "compilation_failed": false,
+      "java_code_chars": 1771,
+      "solver_stats": {
+        "building_time": "Building time : 0.035s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully found 2 solutions for the 3x3 magic square problem. The model, named \"Magic Square,\" used an array of IntVar called `vars` to represent each cell in the magic square. The solver had to explore 5 nodes and performed 7 backtracks, indicating a systematic search through possible combinations of numbers 1 to 9. The constraints, such as allDifferent and the sum requirements for rows, columns, and diagonals, significantly narrowed down the possibilities, guiding the solver toward the valid solutions efficiently. This structured approach allowed the solver to find both solutions in a relatively short building time of 0.035 seconds.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": [
+        "Iteration 0: compilation_error \u2014 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/CreateA3x3MagicSolver.java:[6,40] cannot find symbol\n  symbol:   class VF\n  location: package org.chocosolver.solver.variables\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/CreateA3x3MagicSolver.java:[7,40] cannot find symbol\n  symbol:   class VariableFactory\n  location: package org.chocosolver.solver.variables\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/CreateA3x3MagicSolver.java:[36,15] cannot find symbol\n  symbol:   method onSolution(()->{ Syst[...]; } })\n  location: variable solver of type org.chocosolver.solver.Solver\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project choco-runner: Compilation failure: Compilation failure: \n[ERROR] /C:/Users/belho/OneDrive"
+      ]
+    },
+    {
+      "problem_id": "magic_square_4x4",
+      "problem_name": "4x4 Magic Square",
+      "category": "magic_square",
+      "difficulty": "medium",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 85.33,
+      "compilation_failed": false,
+      "java_code_chars": 2086,
+      "solver_stats": {
+        "building_time": "Building time : 0.029s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully found two valid solutions for the 4x4 magic square problem. The solver used the `vars` array to represent each cell in the grid and applied constraints to ensure that every row, column, and both main diagonals sum to 34. The solver's efficiency in finding these solutions is evident from the statistics, which show that it explored only 5 nodes and performed 7 backtracks during the search process. This relatively low number of nodes and backtracks indicates that the constraints effectively narrowed down the search space, allowing the solver to quickly identify the valid configurations. The two solutions found demonstrate that there are multiple ways to arrange the numbers 1 to 16 to meet the magic square criteria. The solver's behavior was guided by the constraints, which ensured that each number was used exactly once and that all sum requirements were met. The building time of 0.029 seconds further highlights the solver's efficiency in handling this problem.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": [
+        "Iteration 0: compilation_error \u2014 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/CreateA4x4MagicSolver.java:[5,37] cannot find symbol\n  symbol:   class SolutionMonitor\n  location: package org.chocosolver.solver.search\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/CreateA4x4MagicSolver.java:[7,40] cannot find symbol\n  symbol:   class VF\n  location: package org.chocosolver.solver.variables\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/CreateA4x4MagicSolver.java:[44,39] cannot find symbol\n  symbol:   class SolutionMonitor\n  location: class runner.CreateA4x4MagicSolver\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/CreateA4x4MagicSolver.java:[45,13] method does not override or implement a method from a supertype\n[ERROR] Failed to execute goal org.apa"
+      ]
+    },
+    {
+      "problem_id": "graph_color_7",
+      "problem_name": "Graph Coloring (7 vertices)",
+      "category": "graph_coloring",
+      "difficulty": "medium",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 72.3,
+      "compilation_failed": false,
+      "java_code_chars": 2288,
+      "solver_stats": {
+        "building_time": "Building time : 0.035s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully solved the graph coloring problem by exploring a limited search space due to the constraints imposed by the graph's edges. The model used variables like `v1`, `v2`, and `v3` to represent the color of each vertex, with each variable having a domain of 1 to 3. The constraints, such as `v1 != v2` and `v2 != v3`, ensured that adjacent vertices did not share the same color, significantly reducing the number of possible solutions. The solver found 2 valid solutions after exploring 5 nodes and backtracking 7 times, which indicates that the constraints effectively pruned the search tree, leading to a relatively efficient search process. The building time of 0.035 seconds highlights the quick setup of the model, while the 7 backtracks and 2 failures suggest that the solver had to retrace its steps several times before finding the valid colorings. Overall, the constraints played a crucial role in guiding the solver to the solutions efficiently.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": [
+        "Iteration 0: compilation_error \u2014 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Color7VerticesOfSolver.java:[8,19] package org.kohsuke does not exist\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Color7VerticesOfSolver.java:[57,91] package org.chocosolver.solver.search.solution does not exist\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Color7VerticesOfSolver.java:[37,28] incompatible types: runner.Color7VerticesOfSolver.SolutionMonitor cannot be converted to org.chocosolver.solver.search.loop.monitors.ISearchMonitor\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/Color7VerticesOfSolver.java:[58,9] method does not override or implement a method from a supertype\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:"
+      ]
+    },
+    {
+      "problem_id": "send_more_money",
+      "problem_name": "SEND + MORE = MONEY",
+      "category": "cryptarithmetic",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 159.76,
+      "compilation_failed": false,
+      "java_code_chars": 17,
+      "solver_stats": {
+        "building_time": "Building time : 0.039s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully solved the cryptarithmetic puzzle SEND + MORE = MONEY by assigning unique digits to each letter, ensuring no leading zeros for S and M. The solver used variables like q[0], q[1], q[2], and q[3] to represent the digits assigned to each letter. It found two valid solutions after exploring 5 nodes and backtracking 7 times, which indicates the solver efficiently navigated the constraint space. The constraints, such as unique digit assignments and no leading zeros, guided the solver's search, leading it to backtrack when invalid partial solutions were encountered. This systematic approach allowed the solver to discover both valid solutions without exceeding the problem's constraints.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": [
+        "Iteration 0: compilation_error \u2014 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/SolveTheCryptarithmeticPuzzleSolver.java:[6,47] cannot find symbol\n  symbol:   class IModelListener\n  location: package org.chocosolver.solver.variables.events\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/SolveTheCryptarithmeticPuzzleSolver.java:[7,47] cannot find symbol\n  symbol:   class ModelEvent\n  location: package org.chocosolver.solver.variables.events\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/SolveTheCryptarithmeticPuzzleSolver.java:[37,49] bad operand types for binary operator '*'\n  first type:  int\n  second type: org.chocosolver.solver.variables.IntVar\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/SolveTheCryptarithmeticPuzzleSolver.java:[40,14] no sui"
+      ]
+    },
+    {
+      "problem_id": "job_scheduling",
+      "problem_name": "Simple Job Scheduling",
+      "category": "scheduling",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 161.36,
+      "compilation_failed": false,
+      "java_code_chars": 17,
+      "solver_stats": {
+        "building_time": "Building time : 0.089s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully solved the scheduling problem by exploring 5 nodes and backtracking 7 times, ultimately finding 2 solutions. The variables in the Java model, such as `q`, represent the start times of tasks, which are constrained to ensure tasks within each job are executed in order and no machine is overloaded. The solver's efficiency, with a building time of 0.089 seconds, stems from the tight constraints that limited the search space, allowing it to quickly identify valid schedules. The two solutions found demonstrate how the solver navigated the constraints to minimize the makespan effectively.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "latin_square_4x4",
+      "problem_name": "Latin Square 4x4",
+      "category": "latin_square",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 76.65,
+      "compilation_failed": false,
+      "java_code_chars": 2349,
+      "solver_stats": {
+        "building_time": "Building time : 0.028s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully solved the 4x4 Latin square problem by exploring a limited search space due to the tight constraints. The model used variables like `grid[i][j]` to represent each cell in the 4x4 grid, ensuring each row and column contained distinct integers from 1 to 4 through `allDifferent` constraints. The solver found 2 solutions, exploring 5 nodes and backtracking 7 times, which indicates efficient pruning of invalid paths. The constraints significantly reduced the number of possible solutions, allowing the solver to quickly find the valid configurations. The building time of 0.028 seconds reflects the model's efficiency in setting up these constraints. The two solutions found demonstrate that the solver effectively navigated the constrained search space, ensuring all rows and columns met the Latin square requirements.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": [
+        "Iteration 0: compilation_error \u2014 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/FillA4x4GridSolver.java:[6,40] cannot find symbol\n  symbol:   class ResolutionOrder\n  location: package org.chocosolver.solver.variables\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/FillA4x4GridSolver.java:[8,56] package org.chocosolver.solver.search.strategy.selectors does not exist\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/FillA4x4GridSolver.java:[9,56] package org.chocosolver.solver.search.strategy.selectors does not exist\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/FillA4x4GridSolver.java:[10,56] package org.chocosolver.solver.search.strategy.selectors does not exist\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_run"
+      ]
+    },
+    {
+      "problem_id": "knapsack_5",
+      "problem_name": "Knapsack (5 items)",
+      "category": "knapsack",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": false,
+      "error_category": "none",
+      "iterations": 1,
+      "wall_time_seconds": 54.06,
+      "compilation_failed": false,
+      "java_code_chars": 1224,
+      "solver_stats": {
+        "building_time": "Building time : 0.043s",
+        "solutions_found": 2,
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully solved the 0/1 knapsack problem by exploring possible combinations of items that maximize the total value while respecting the weight constraint of 10. The solver used the `items` variable, an array of IntVar representing each item's inclusion (1) or exclusion (0), to systematically test different configurations. During its search, the solver explored 5 nodes and performed 7 backtracks, indicating that it had to revisit and revise its choices several times before finding valid solutions. The weight constraint, implemented through the `model.scalar(items, weights, \"<=\", 10).post();` line, played a crucial role in pruning the search space by eliminating combinations that exceeded the knapsack's capacity. This constraint-based pruning allowed the solver to efficiently narrow down the possibilities and ultimately find 2 optimal solutions. The solver's ability to maximize the total value while adhering to the weight constraint demonstrates how the constraints in the model guided the search toward feasible and valuable solutions.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": [
+        "Iteration 0: compilation_error \u2014 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)\nWARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner\nWARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release\n\n--- maven stdout ---\n[ERROR] COMPILATION ERROR : \n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/SolveA01Solver.java:[7,40] cannot find symbol\n  symbol:   class VariableMonitor\n  location: package org.chocosolver.solver.variables\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/SolveA01Solver.java:[19,24] cannot find symbol\n  symbol:   method offsetView(org.chocosolver.solver.variables.IntVar[],int[])\n  location: variable model of type org.chocosolver.solver.Model\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/SolveA01Solver.java:[23,29] cannot find symbol\n  symbol:   method offsetView(org.chocosolver.solver.variables.IntVar[],int[])\n  location: variable model of type org.chocosolver.solver.Model\n[ERROR] /C:/Users/belho/OneDrive/Documents/UNICA M1 COURSES/DS4H/Trivial Solver/choco_runner/src/main/java/runner/SolveA01Solver.java:[28"
+      ]
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "successes": 10,
+    "success_rate": 100.0,
+    "first_shot_successes": 1,
+    "first_shot_success_rate": 10.0,
+    "compilation_failures": 0,
+    "compilation_failure_rate": 0.0,
+    "mean_iterations": 0.9,
+    "mean_wall_time_seconds": 88.86,
+    "error_breakdown": {
+      "none": 10
+    },
+    "by_difficulty": {
+      "easy": {
+        "total": 3,
+        "successes": 3
+      },
+      "medium": {
+        "total": 3,
+        "successes": 3
+      },
+      "hard": {
+        "total": 4,
+        "successes": 4
+      }
+    },
+    "by_category": {
+      "queens": {
+        "total": 2,
+        "successes": 2
+      },
+      "sudoku": {
+        "total": 1,
+        "successes": 1
+      },
+      "magic_square": {
+        "total": 2,
+        "successes": 2
+      },
+      "graph_coloring": {
+        "total": 1,
+        "successes": 1
+      },
+      "cryptarithmetic": {
+        "total": 1,
+        "successes": 1
+      },
+      "scheduling": {
+        "total": 1,
+        "successes": 1
+      },
+      "latin_square": {
+        "total": 1,
+        "successes": 1
+      },
+      "knapsack": {
+        "total": 1,
+        "successes": 1
+      }
+    },
+    "faithfulness": {
+      "n_with_explanation": 10,
+      "pass_rate": 0.0,
+      "mean_var_overlap_ratio": 0.0
+    }
+  }
+}

@@ -1,0 +1,4 @@
+model,L1_success_rate,L2_success_rate,d_success_rate,L1_first_shot_rate,L2_first_shot_rate,d_first_shot_rate,L1_mean_iterations,L2_mean_iterations,d_mean_iterations,L1_compilation_failure_rate,L2_compilation_failure_rate,d_compilation_failure_rate,L1_mean_wall_time_s,L2_mean_wall_time_s,d_mean_wall_time_s
+qwen,100.0,90.0,-10.0,80.0,20.0,-60.0,0.2,2.0,1.8,0.0,10.0,10.0,40.76,107.08,66.32
+haiku,100.0,50.0,-50.0,70.0,20.0,-50.0,0.5,2.2,1.7000000000000002,0.0,50.0,50.0,19.51,40.65,21.139999999999997
+deepseek,80.0,100.0,20.0,40.0,100.0,60.0,1.1,0.0,-1.1,20.0,0.0,-20.0,139.28,395.21,255.92999999999998

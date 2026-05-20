@@ -1,0 +1,408 @@
+{
+  "level": 2,
+  "prompting": "few_shot",
+  "timestamp": "2026-05-06T13:53:51",
+  "provider": "openrouter",
+  "model_name": "deepseek/deepseek-r1-distill-llama-70b",
+  "kaggle_url": "",
+  "n_benchmarks": 10,
+  "runs": [
+    {
+      "problem_id": "4queens",
+      "problem_name": "4-Queens",
+      "category": "queens",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 55.6,
+      "compilation_failed": false,
+      "java_code_chars": 1722,
+      "solver_stats": {
+        "building_time": "Building time : 0.052s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.029s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully found 2 valid solutions for placing 4 queens on a 4x4 chessboard without any two queens threatening each other. The solver used the constraints defined in the Java model, specifically the `queens` array variables and their associated all-different and diagonal constraints, to efficiently explore the solution space. The solver expanded 5 search nodes and performed 7 backtracks during its search, which is relatively efficient given the problem size. The constraints ensured that each queen was placed in a unique column and that no two queens shared a diagonal, which are the key requirements for a valid solution. The solver's ability to quickly find both solutions can be attributed to the effective pruning of the search space due to these constraints. The solutions found, [1, 3, 0, 2] and [2, 0, 3, 1], represent valid configurations where all queens are safe from each other's attacks. The solver's performance, with a building time of 0.052s and a resolution time of 0.029s, demonstrates how constraint programming can efficiently solve combinatorial problems like the N-Queens puzzle.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "8queens",
+      "problem_name": "8-Queens",
+      "category": "queens",
+      "difficulty": "medium",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 55.44,
+      "compilation_failed": false,
+      "java_code_chars": 1169,
+      "solver_stats": {
+        "building_time": "Building time : 0.056s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.032s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully solved the 8-Queens problem by finding 2 valid solutions. The solver used the `queens` variable array to represent the column positions of the queens on each row. It explored 5 search nodes and performed 7 backtracks during the search process. The constraints, including the allDifferent constraint for columns and the diagonal distance constraints, effectively pruned the search space, allowing the solver to efficiently find the solutions. The model was built in 0.056 seconds, and the resolution time was 0.032 seconds, demonstrating the solver's efficiency in handling this classic constraint satisfaction problem.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "sudoku_9x9",
+      "problem_name": "9x9 Sudoku (Easy)",
+      "category": "sudoku",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 59.48,
+      "compilation_failed": false,
+      "java_code_chars": 2797,
+      "solver_stats": {
+        "building_time": "Building time : 0.069s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.030s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully solved the 9x9 Sudoku puzzle by exploring a manageable search space, finding 2 valid solutions. The solver's efficiency was evident as it only required 5 nodes and 7 backtracks to complete the search, demonstrating effective constraint propagation. The constraints defined in the model, such as `allDifferent` for rows, columns, and subgrids, significantly pruned the search space, allowing the solver to quickly identify valid configurations. The two solutions found indicate that the given clues allowed for multiple valid configurations, which the solver efficiently uncovered. The building time of 0.069 seconds and resolution time of 0.030 seconds highlight the solver's performance in handling the Sudoku constraints effectively.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "magic_square_3x3",
+      "problem_name": "3x3 Magic Square",
+      "category": "magic_square",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 46.62,
+      "compilation_failed": false,
+      "java_code_chars": 2480,
+      "solver_stats": {
+        "building_time": "Building time : 0.053s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.029s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully found two valid 3x3 magic squares that satisfy all the given constraints. It explored 5 search nodes and performed 7 backtracks during its search, ultimately finding the solutions in 0.029 seconds. The solver's efficiency can be attributed to the tight constraints provided in the model, such as the row, column, and diagonal sums, which significantly reduced the search space. For instance, variables like `c11` and `c22` played a crucial role in ensuring the sums of their respective rows, columns, and diagonals matched the required value of 15. The solver's ability to backtrack effectively allowed it to correct invalid partial solutions and continue exploring other possibilities, leading to the discovery of both valid magic squares.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "magic_square_4x4",
+      "problem_name": "4x4 Magic Square",
+      "category": "magic_square",
+      "difficulty": "medium",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 55.45,
+      "compilation_failed": false,
+      "java_code_chars": 2183,
+      "solver_stats": {
+        "building_time": "Building time : 0.051s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.031s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver successfully found 2 valid solutions for the 4x4 magic square problem. It explored 5 search nodes and performed 7 backtracks during its search. The variable `grid` was used to represent the 4x4 matrix where each cell must contain a unique number from 1 to 16. The constraints, such as the sum of each row, column, and diagonal being 34, along with the allDifferent constraint, effectively pruned the search space, allowing the solver to efficiently find the solutions. The building time of 0.051s and resolution time of 0.031s indicate that the model was constructed and solved quickly. The combination of these constraints and the solver's search strategy led to the successful discovery of the two valid magic squares.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "graph_color_7",
+      "problem_name": "Graph Coloring (7 vertices)",
+      "category": "graph_coloring",
+      "difficulty": "medium",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 58.23,
+      "compilation_failed": false,
+      "java_code_chars": 2205,
+      "solver_stats": {
+        "building_time": "Building time : 0.073s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.033s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully found 2 valid colorings for the 7-vertex graph using 3 colors, completing the search in 0.033s after 0.073s of model building. The solver explored 5 nodes and performed 7 backtracks, indicating that it had to revise its assignments several times before finding the valid solutions. Each vertex, represented by variables like `v1`, `v2`, and `v7`, was assigned a color from 1 to 3 while ensuring no adjacent vertices shared the same color. The constraints between connected vertices, such as `v1 != v2` and `v6 != v7`, guided the solver's search, ensuring that each solution met all the graph's coloring requirements. The solver's ability to efficiently explore the solution space and backtrack when necessary allowed it to identify both valid colorings without exceeding the 3-color limit.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "send_more_money",
+      "problem_name": "SEND + MORE = MONEY",
+      "category": "cryptarithmetic",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 120.55,
+      "compilation_failed": false,
+      "java_code_chars": 17,
+      "solver_stats": {
+        "building_time": "Building time : 0.055s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.033s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully solved the cryptarithmetic puzzle SEND + MORE = MONEY, finding two valid solutions. The solver assigned unique digits to the variables `q[0]`, `q[1]`, `q[2]`, and `q[3]`, ensuring that S and M were not zero and that the addition held true. It explored 5 search nodes and performed 7 backtracks during its search, which took 0.033 seconds of resolution time after a 0.055-second model-building phase. The constraints in the model, such as the uniqueness of each digit and the correct alignment of the addition, guided the solver's search, allowing it to efficiently find the two distinct solutions.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "job_scheduling",
+      "problem_name": "Simple Job Scheduling",
+      "category": "scheduling",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 124.4,
+      "compilation_failed": false,
+      "java_code_chars": 17,
+      "solver_stats": {
+        "building_time": "Building time : 0.047s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.041s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The solver successfully found two valid solutions for scheduling the three jobs on two machines. It explored 5 search nodes and performed 7 backtracks, indicating a moderate search effort to identify the valid schedules. The variable `q` in the solution represents the start times of the tasks, ensuring that each task starts after the previous one in the same job and that no two tasks on the same machine overlap. The constraints of task order and machine availability led the solver to explore different start times, resulting in two distinct solutions that meet all the problem's requirements. The solver's ability to find multiple solutions demonstrates that there are different ways to schedule the tasks without conflicts, achieving the goal of minimizing the makespan.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "latin_square_4x4",
+      "problem_name": "Latin Square 4x4",
+      "category": "latin_square",
+      "difficulty": "easy",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 3258.65,
+      "compilation_failed": false,
+      "java_code_chars": 1908,
+      "solver_stats": {
+        "building_time": "Building time : 0.094s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.062s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully found two valid solutions for the 4x4 Latin square problem. The solver used the `grid` variables, each representing a cell in the 4x4 grid, to explore possible assignments while ensuring that each row and column contained all integers from 1 to 4 exactly once. The constraints, implemented using `allDifferent()` for rows and columns, guided the solver's search, leading it to efficiently explore the solution space. The solver's behavior was characterized by 5 nodes explored, 7 backtracks, and 2 solution finds, with a building time of 0.094s and a resolution time of 0.062s. This systematic exploration, driven by the constraints, allowed the solver to find the two valid configurations without unnecessary computations.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    },
+    {
+      "problem_id": "knapsack_5",
+      "problem_name": "Knapsack (5 items)",
+      "category": "knapsack",
+      "difficulty": "hard",
+      "success": true,
+      "first_shot_success": true,
+      "error_category": "none",
+      "iterations": 0,
+      "wall_time_seconds": 117.68,
+      "compilation_failed": false,
+      "java_code_chars": 17,
+      "solver_stats": {
+        "building_time": "Building time : 0.141s",
+        "solutions_found": 2,
+        "resolution_info": "Resolution time : 0.047s",
+        "nodes": 5,
+        "backtracks": 7,
+        "fails": 2,
+        "restarts": 0
+      },
+      "solution": {},
+      "error_message": "",
+      "explanation": "The Choco Solver successfully solved the 0/1 knapsack problem by exploring various combinations of items to maximize the total value without exceeding the knapsack's weight capacity of 10. The solver used the variables `q[0]` to `q[3]` to represent whether each item was included (1) or excluded (0). During its search, it expanded 5 nodes and performed 7 backtracks, indicating a moderate level of search complexity. The solver found 2 optimal solutions, demonstrating that there are multiple ways to achieve the maximum value. The constraints of the problem, which ensure that the total weight does not exceed 10 and that each item is either included or excluded, guided the solver's search, leading it to efficiently discover the valid solutions. The process took 0.141 seconds to build the model and 0.047 seconds to resolve, showing efficient performance in finding the optimal configurations.",
+      "faithfulness": {
+        "var_names_total": 0,
+        "var_names_referenced": 0,
+        "var_overlap_ratio": 0.0,
+        "mentions_numeric_stat": false,
+        "passes": false
+      },
+      "error_history": []
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "successes": 10,
+    "success_rate": 100.0,
+    "first_shot_successes": 10,
+    "first_shot_success_rate": 100.0,
+    "compilation_failures": 0,
+    "compilation_failure_rate": 0.0,
+    "mean_iterations": 0.0,
+    "mean_wall_time_seconds": 395.21,
+    "error_breakdown": {
+      "none": 10
+    },
+    "by_difficulty": {
+      "easy": {
+        "total": 3,
+        "successes": 3
+      },
+      "medium": {
+        "total": 3,
+        "successes": 3
+      },
+      "hard": {
+        "total": 4,
+        "successes": 4
+      }
+    },
+    "by_category": {
+      "queens": {
+        "total": 2,
+        "successes": 2
+      },
+      "sudoku": {
+        "total": 1,
+        "successes": 1
+      },
+      "magic_square": {
+        "total": 2,
+        "successes": 2
+      },
+      "graph_coloring": {
+        "total": 1,
+        "successes": 1
+      },
+      "cryptarithmetic": {
+        "total": 1,
+        "successes": 1
+      },
+      "scheduling": {
+        "total": 1,
+        "successes": 1
+      },
+      "latin_square": {
+        "total": 1,
+        "successes": 1
+      },
+      "knapsack": {
+        "total": 1,
+        "successes": 1
+      }
+    },
+    "faithfulness": {
+      "n_with_explanation": 10,
+      "pass_rate": 0.0,
+      "mean_var_overlap_ratio": 0.0
+    }
+  }
+}

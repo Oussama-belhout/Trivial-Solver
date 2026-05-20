@@ -1,0 +1,4 @@
+model,variant,n_runs,success_rate,first_shot_rate,compilation_failure_rate,mean_iterations,mean_wall_time_s,faith_pass_rate,faith_mean_overlap
+qwen,few_shot,10,0.0,0.0,100.0,3.0,23.11,0.0,0.0
+haiku,few_shot,10,100.0,70.0,0.0,0.5,19.51,0.0,0.0
+deepseek,few_shot,10,80.0,40.0,20.0,1.1,139.28,0.0,0.0
