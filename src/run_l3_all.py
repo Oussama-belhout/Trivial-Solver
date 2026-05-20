@@ -3,7 +3,14 @@
 Sets MODEL_NAME / MODEL_TAG via os.environ before evaluate.py so each sub-run
 uses a fresh provider config. Output -> results/L3_few_shot_<tag>.json.
 """
-import os, sys, subprocess, time
+import os
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+EVALUATE_PATH = REPO_ROOT / "evaluate.py"
 
 MODELS = [
     ("qwen/qwen3-coder",                       "qwen"),
@@ -18,7 +25,8 @@ for name, tag in MODELS:
     env["MODEL_TAG"] = tag
     t0 = time.time()
     rc = subprocess.run(
-        [sys.executable, "-u", "evaluate.py", "--level", "3", "--prompting", "few_shot"],
+        [sys.executable, "-u", str(EVALUATE_PATH), "--level", "3", "--prompting", "few_shot"],
+        cwd=REPO_ROOT,
         env=env,
     ).returncode
     print(f"\n[{tag}] done in {time.time()-t0:.1f}s rc={rc}", flush=True)
