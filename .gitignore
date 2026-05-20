@@ -7,3 +7,6 @@ choco_runner/target/
 choco_runner/generated_models/
 *.class
 .streamlit/
+trivial_version_context/
+report/
+.claude/
